@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Resume Match • AI Academia</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="full-container">
+
+  <!-- HEADER -->
+  <header class="top-bar">
+    <button class="back-arrow" onclick="history.back()">←</button>
+    <h2>Resume ↔ Job Match</h2>
+  </header>
+
+  <!-- MAIN PANEL -->
+  <div class="single-panel">
+
+    <!-- RESUME UPLOAD -->
+    <section class="block">
+      <h3>Upload Resume</h3>
+      <input type="file" id="resumeInput" accept="application/pdf">
+      <p class="hint">PDF only • Resume will be analyzed</p>
+
+      <div class="chip-row">
+        <span class="chip">Skills</span>
+        <span class="chip">Qualification</span>
+        <span class="chip">Experience</span>
+      </div>
+    </section>
+
+    <!-- JOB REQUIREMENTS -->
+    <section class="block">
+      <h3>Job Requirements</h3>
+      <textarea
+        id="jobInput"
+        placeholder="Paste required skills / job description here..."
+        rows="7"></textarea>
+    </section>
+
+    <!-- CTA -->
+    <button id="analyzeBtn" class="primary-cta">
+      🔍 Analyze Resume Match
+    </button>
+
+    <!-- RESULTS -->
+    <section class="results">
+
+      <div class="result-card">
+        <h4>✔ Resume Skills</h4>
+        <ul id="resumeSkills"></ul>
+      </div>
+
+      <div class="result-card warning">
+        <h4>⚠ Missing Skills</h4>
+        <ul id="missingSkills"></ul>
+      </div>
+
+      <div class="result-card center" id="atsCard">
+  <h4>📊 ATS Score</h4>
+  <div class="score-ring">
+    <span id="atsScore">Click</span>
+  </div>
+</div>
+
+    </section>
+
+    <section class="block">
+      <h4>🎓 Qualification Detected</h4>
+      <p id="qualification">—</p>
+    </section>
+   
+  </div>
+</div>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script  src="resume-match.js"></script>
+</body>
+</html>
